@@ -1,0 +1,10 @@
+import re
+email=input("please enter the email id:")
+# Gmail Rule:
+# only {a-z} and {0-9} and {.} are allowed. min 6 and max 30 character allowed
+search = re.fullmatch("[a-z0-9.]{6,30}@gmail[.]com",email)
+if search !=None:
+   print("Email id is correct:",search.group())
+else:
+    print("bad email id, Enter correct id")
+

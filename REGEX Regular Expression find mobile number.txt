@@ -1,0 +1,46 @@
+# Taking an input of 10,11,12,13 digits and finding the correct mobile number:
+# number should be 10 dig or 11 dig or 12 dig or 13d dig:
+# 10: first number between 6-9, rest any number
+# 11: fisr 0 than 6-9 tna any number
+# 12: first 91 than 6-9 than any number
+# 13: first +91 than 6-9 tan any number
+# -------------------------------------------------------------------------
+
+import re
+i=input("Please enter your Mobile number:")
+if len(str(i))==10:
+    n=re.fullmatch('[6-9]\d{9}',i)
+    print("The mobile number is: ",n.group())
+elif len(str(i)) == 11:
+    n1=re.fullmatch('[0][6-9]\d{9}',i)
+    print("The mobile number is: ",n1.group())
+elif len(str(i)) == 12:
+    n2 = re.fullmatch('[9][1][6-9]\d{9}',i)
+    print("The mobile number is: ",n2.group())
+elif len(str(i)) == 13:
+    n3 = re.fullmatch('[+][9][1][6-9]\d{9}',i)
+    print("The mobile number is: ",n3.group())
+else:
+    print("Wrong Mobile number entered")
+
+# =========================================================
+# Same program we can define under an function like below:
+
+import re
+def match(i):
+    if len(str(i)) == 10:
+        n = re.fullmatch('[6-9]\d{9}', i)
+        print("The mobile number is: ", n.group())
+    elif len(str(i)) == 11:
+        n1 = re.fullmatch('[0][6-9]\d{9}', i)
+        print("The mobile number is: ", n1.group())
+    elif len(str(i)) == 12:
+        n2 = re.fullmatch('[9][1][6-9]\d{9}', i)
+        print("The mobile number is: ", n2.group())
+    elif len(str(i)) == 13:
+        n3 = re.fullmatch('[+][9][1][6-9]\d{9}', i)
+        print("The mobile number is: ", n3.group())
+    else:
+        print("Wrong Mobile number entered")
+
+print(match(input("please enter the number:")))

@@ -1,0 +1,23 @@
+import os
+import re
+path = 'C:\\Users\\jmathpal\\PycharmProjects\\Learning_Automation\\data\\'
+files = []
+# r=root, d=directories, f = files
+for r, d, f in os.walk(path):
+    for file in f:
+        #if '.txt' in file:    # if need to find files with .txt extension.
+            files.append(os.path.join(r, file)) # getting the files list
+
+for f in files:    # reading all files one by one using for loop
+    open_file=open(f,"r")
+    data=open_file.read()
+	open_file.close()
+    n = re.finditer('[+0-9]\d{9,11}', data)  # Now you have all numbers ready for iteration
+
+    # next you can perform any operations with your number list. I am here simply printing the numbers. you can write complex codes like sending SMS
+    for text in n:
+        print("the mobile no is:",text.group())
+
+
+
+

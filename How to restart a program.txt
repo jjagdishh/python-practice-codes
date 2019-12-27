@@ -1,0 +1,20 @@
+define main():
+      xxxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxxxxxx
+               xxxxxxxxxxxxxxxx    Your Code here
+                fffffffffffffffff
+      cccccccccccccccccccccc
+      xxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxx
+      restart = input("Do You want to run the program again ? : ").lower()
+      if restart == 'yes':
+         main()
+      elif restart == 'y':
+           main()
+      else:
+           print("Thanks for using this program")
+           exit()
+main()
+      
+# This is a simple way to restart your program. Paste your code between main(): and main(). indent selection properly and test 
