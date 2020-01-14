@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+import collections
+if __name__=='__main__':
+    s = sorted(input().strip())
+    count = collections.Counter(s).most_common()
+    for x in range(3):
+        print (count[x][0],count[x][1])
